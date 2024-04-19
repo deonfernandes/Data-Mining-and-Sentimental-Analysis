@@ -33,12 +33,7 @@ words <- news_data %>%
 
 
 
-
-# Step 5: Perform sentiment analysis using NRC lexicon
-
-nrc <- read_csv("C:/Desktop/Data_mining/nrc.csv")
-
-# Join words with NRC lexicon and keep word data in the output
+# Join words with NRC and keep word data in the output
 emotion_words <- words %>%
   inner_join(nrc, by = "word", relationship = 'many-to-many') %>%
   group_by(word, sentiment) %>%
