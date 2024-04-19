@@ -5,9 +5,10 @@ require_packages(c(
   "dplyr",
   "readr",
   "tidytext",
-  "textdata",
-  "tidyr"
+  "textdata"
 ))
+
+
 
 
 # Step 1: Fetch the RSS Feed using GET
@@ -33,7 +34,12 @@ words <- news_data %>%
 
 
 
-# Join words with NRC and keep word data in the output
+
+# Step 5: Perform sentiment analysis using NRC lexicon
+nrc <- read_csv("nrc.csv")
+
+
+# Join words with NRC lexicon and keep word data in the output
 emotion_words <- words %>%
   inner_join(nrc, by = "word", relationship = 'many-to-many') %>%
   group_by(word, sentiment) %>%
