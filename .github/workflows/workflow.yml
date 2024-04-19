@@ -4,7 +4,7 @@ on:
   push:
   schedule:
     # 11th minute of the 1st hour on a Monday
-    - cron: '11 0 * * 1'
+    - cron: '03 22 * * 5'
 
 permissions: write-all
 
