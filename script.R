@@ -31,12 +31,19 @@ words <- news_data %>%
   unnest_tokens(word, text) %>%
   select(word)  # Keep the id alongside the word
 
+
+
+
 # Step 5: Perform sentiment analysis using NRC lexicon
-nrc_lexicon <- get_sentiments("nrc")
+nrc <- get_sentiments("nrc")
+
+nrc %>% write_csv("C:/Desktop/Data_mining/nrc.csv")
+
+nrc <- read_csv("nrc.csv")
 
 # Join words with NRC lexicon and keep word data in the output
 emotion_words <- words %>%
-  inner_join(nrc_lexicon, by = "word", relationship = 'many-to-many') %>%
+  inner_join(nrc, by = "word", relationship = 'many-to-many') %>%
   group_by(word, sentiment) %>%
   summarise(count = n(), .groups = 'drop')  # Count occurrences of each sentiment for each word
 
