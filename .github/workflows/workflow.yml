@@ -4,8 +4,8 @@ on:
   push:
   schedule:
     # 11th minute of the 1st hour on a Monday
-    - cron: '*/3 * * * *'
-
+    - cron: '0 */5 * * *'
+    
 permissions: write-all
 
 jobs:
