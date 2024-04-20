@@ -71,7 +71,7 @@ filename <- sprintf("%s-%s.csv",
 
 # Specify the path to the directory where the file should be saved
 # Adjust "deonfernandes/data_mining" to the actual path where your GitHub repository's relevant folder is cloned locally
-path <- file.path("deonfernandes/data_mining", filename)
+path <- file.path("https://github.com/deonfernandes/data_mining", filename)
 
 # Use write_csv to save the sentiment_proportions dataframe to the specified path
 write_csv(sentiment_proportions, path)
