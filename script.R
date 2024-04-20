@@ -65,13 +65,5 @@ sentiment_proportions <- total_sentiments %>%
 print(sentiment_proportions)
 
 
-filename <- sprintf("%s-%s.csv", 
-                    format(Sys.Date(), "%m-%d"),  # Format for month and day
-                    format(Sys.time(), "%H%M"))   # Format for hour and minute
+sentiment_proportions |> write_csv("data_mining", format(Sys.Date(), "%Y-Week-%V.csv"))
 
-# Specify the path to the directory where the file should be saved
-# Adjust "deonfernandes/data_mining" to the actual path where your GitHub repository's relevant folder is cloned locally
-path <- file.path("https://github.com/deonfernandes/data_mining", filename)
-
-# Use write_csv to save the sentiment_proportions dataframe to the specified path
-write_csv(sentiment_proportions, path)
