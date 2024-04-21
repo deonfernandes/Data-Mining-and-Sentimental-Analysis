@@ -65,5 +65,5 @@ sentiment_proportions <- total_sentiments %>%
 print(sentiment_proportions)
 
 
-sentiment_proportions |> write_csv(format(Sys.Date(), "%Y-%m-%d-%H-%M.csv"))
+sentiment_proportions |> write_csv(format(Sys.time(), "%Y-%m-%d-%H-%M.csv"))
 
