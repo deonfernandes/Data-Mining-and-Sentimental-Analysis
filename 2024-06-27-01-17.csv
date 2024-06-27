@@ -1,0 +1,11 @@
+sentiment,total,proportion
+anger,26,7.39%
+anticipation,23,6.53%
+disgust,13,3.69%
+fear,61,17.33%
+joy,16,4.55%
+negative,60,17.05%
+positive,63,17.90%
+sadness,24,6.82%
+surprise,9,2.56%
+trust,57,16.19%
